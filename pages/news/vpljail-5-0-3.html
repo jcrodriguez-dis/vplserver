@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VPL Jail System 5.0.3 | VPL</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="icon" type="image/svg+xml" href="../../images/vpl-favicon.svg">
+</head>
+
+<body>
+    <div data-include="../../includes/header.html" data-root="../../"></div>
+
+    <main>
+        <header class="page-header">
+            <div class="container">
+                <p class="eyebrow">Release news</p>
+                <h1>VPL Jail System 5.0.3</h1>
+            </div>
+        </header>
+        <article class="container content">
+            <p class="lede">VPL Jail System 5.0.3 is a maintenance release focused on stability, compatibility, and
+                reliability.</p>
+
+            <h2>More reliable connections</h2>
+            <p>Communication between VPL and the Jail Server has been improved.</p>
+            <ul>
+                <li>Improves WebSocket communication for text data by handling invalid UTF-8 sequences.</li>
+                <li>Fixes an issue where duplicate cookies could interrupt communication.</li>
+                <li>Improves compatibility of the <code>VPL_Iwh</code> cookie used to secure web application execution.</li>
+                <li>Optimizes communication wait times for better responsiveness and resource usage.</li>
+                <li>Fixes an issue that could cause an unnecessary time-status message to be sent after a task had already
+                    stopped.</li>
+            </ul>
+
+            <h2>Improved installation and upgrades</h2>
+            <ul>
+                <li>Improves package installation and error reporting.</li>
+                <li>Improves compatibility with Linux distributions that use <code>dnf</code>.</li>
+                <li>Automatically updates service configuration after upgrades.</li>
+                <li>Adds the <code>install-vpl-ls.sh</code> script for LS installation.</li>
+                <li>Adds support for installing LS during Docker builds.</li>
+            </ul>
+
+            <h2>Improved logging</h2>
+            <ul>
+                <li>Moves log files to <code>/var/log/vpl</code>.</li>
+                <li>Logs routine events related to WebSocket closures, task cleanup, and zombie task cleanup at the INFO
+                    or DEBUG level.</li>
+                <li>Adds a standard access log to <code>vpl-jail-server.log</code> as a starting point for accountability
+                    and auditing of executed tasks.</li>
+            </ul>
+
+            <h2>Fixes</h2>
+            <ul>
+                <li>Fixes compatibility issues with 32-bit systems.</li>
+                <li>Refactors the locking mechanism to use global and task-level locks.</li>
+                <li>Resolves PTY compatibility issues.</li>
+            </ul>
+
+            <h2>Better support for graphical applications</h2>
+            <p>VNC support has been improved for activities that require a graphical desktop or graphical applications.</p>
+            <ul>
+                <li>Improves TigerVNC installation.</li>
+                <li>Improves VNC startup reliability.</li>
+                <li>Improves error reporting when a graphical session cannot be started.</li>
+                <li>Improves graphical session startup speed.</li>
+            </ul>
+
+            <h2>Improved Java/JUnit support</h2>
+            <p>The <strong>Hamcrest</strong> package is now included as a dependency required by JUnit, improving support
+                for Java programming activities that use JUnit tests.</p>
+
+            <h2>Recommended update</h2>
+            <p>Updating to <strong>VPL Jail Server 5.0.3</strong> is recommended for installations using previous 5.0
+                releases, particularly for sites using graphical activities, JUnit, or web applications, as well as
+                sites that have experienced intermittent communication or startup issues.</p>
+        </article>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>VPL - Virtual Programming Lab</p>
+            <p><a href="../news.html">All news</a></p>
+        </div>
+    </footer>
+    <script src="../../header-loader.js" defer></script>
+</body>
+
+</html>
